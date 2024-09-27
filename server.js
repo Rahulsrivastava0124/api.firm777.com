@@ -5,6 +5,7 @@ const port = 3000;
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 const bodyParser = require('body-parser');
+const cors =require('cors');
 
 // Define the CORS options
 const corsOptions = {
