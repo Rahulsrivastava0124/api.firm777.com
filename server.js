@@ -6,7 +6,13 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 const bodyParser = require('body-parser');
 
+// Define the CORS options
+const corsOptions = {
+    credentials: true,
+    origin: ['https://firm777.com', 'http://localhost:5500'] // Whitelist the domains you want to allow
+};
 
+app.use(cors(corsOptions)); // Use the cors middleware with your options
 const User = mongoose.model('user', {
     id: ObjectId,
     Phone: Number,
