@@ -10,7 +10,7 @@ const cors = require("cors");
 // Define the CORS options
 const corsOptions = {
   credentials: true,
-  origin: ["https://firm777.com", "http://localhost:5500"], // Whitelist the domains you want to allow
+  origin: ["https://firm777.com", "http://localhost:5500","http://127.0.0.1:5500/"], // Whitelist the domains you want to allow
 };
 
 app.use(cors(corsOptions)); // Use the cors middleware with your options
