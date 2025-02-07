@@ -6,6 +6,7 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const { CURSOR_FLAGS } = require("mongodb");
 
 // Define the CORS options
 const corsOptions = {
@@ -57,12 +58,20 @@ app.post("/createUser", async (req, res) => {
 });
 
 app.post("/updatePhone", async (req, res) => {
-  const newPhone =await Phone.findOneAndUpdate(
-    {id: "67a482965479c969bf7d264d"},
+  const newPhone = await Phone.findByIdAndUpdate(
+   "67a482965479c969bf7d264d",
     {
       Phone: req.body.Phone,
     }
   );
+
+
+  const getPhone =await Phone.findOne({id:"67a482965479c969bf7d264d"})
+
+  console.log('====================================');
+  console.log(newPhone,req.body.Phone, getPhone);
+  console.log('====================================');
+
   return res.send(newPhone);
 });
 
