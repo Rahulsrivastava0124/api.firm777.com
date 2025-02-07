@@ -57,7 +57,7 @@ app.post("/createUser", async (req, res) => {
 });
 
 app.post("/updatePhone", async (req, res) => {
-  const newPhone =await Phone.updateOne(
+  const newPhone =await Phone.findOneAndUpdate(
     {id: "67a482965479c969bf7d264d"},
     {
       Phone: req.body.Phone,
