@@ -38,7 +38,7 @@ mongoose
   });
 
 app.get("/", function (req, res) {
-  res.send("Hello World");
+  res.send("Hello World New server ");
 });
 
 app.get("/users", async (req, res) => {
